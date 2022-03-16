@@ -13,7 +13,7 @@ func myFunc() {
 ```
 Dans foo_test.go :
 ```go
-func testmyFunc() {
+func TestmyFunc() {
     //test code
 }
 ```
