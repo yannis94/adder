@@ -24,6 +24,24 @@ func TestAdd(t *testing.T) { // https://play.golang.org/p/ECID9_9ddJm
     }
 }
 
+func TestFactoriel(t *testing.T) {
+    checks := []struct {num int; expected int; name string}{
+        {-8, 0, "Error negative num"},
+        {0, 1, "factoriel de 0 = 1"},
+        {1, 1, "factoriel de 1 = 1"},
+        {7, 5040, "factoriel de 7 = 5040"},
+    }
+
+    for _, check := range checks {
+        t.Run(check.name, func(t *testing.T) {
+            check := check
+            t.Parallel()
+            if actual := adder.Factoriel(check.num); actual != check.expected {
+                t.Errorf("expected %d, got %d", check.expected, actual)
+            }
+        })
+    }
+}
 
 func TestMain(m *testing.M) {
     log.Print("setup de paquet")

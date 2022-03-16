@@ -12,3 +12,18 @@ func Add(x ...int) (sum int) { // https://play.golang.org/p/i0nLnowJRgI
     time.Sleep(d)
     return
 }
+
+func Factoriel(n int) int {
+    if (n < 0) {
+        log.Printf("Error: Negativ number")
+        return 0
+    }
+    result := 1
+
+    for i:=1; i<n+1; i++ {
+        result = result * i
+    }
+
+    return result
+}
+
